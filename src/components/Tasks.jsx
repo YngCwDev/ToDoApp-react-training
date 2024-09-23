@@ -2,9 +2,10 @@ import { Check, Trash2 } from "lucide-react";
 import { ChevronRight } from "lucide-react";
 
 function Tasks(props) {
+    console.log(Array.isArray(props.tasks))
   return (
-    <ul className="space-y-4 bg-slate-200 p-6 rounded-sm shadow w-full">
-      {props.tasks.map((task) => (
+    <ul className="space-y-4 bg-slate-200 p-6 rounded-md shadow w-full">
+      {props.tasks.map((task) => 
         <li key={task.id} className="flex space-x-4">
           <button
             onClick={() => props.onTaskClick(task.id)}
@@ -25,7 +26,7 @@ function Tasks(props) {
             <Trash2 />
           </button>
         </li>
-      ))}
+      )}
     </ul>
   );
 }
